@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
@@ -13,6 +14,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,26 +27,34 @@ import { MatTableModule } from '@angular/material/table';
   imports: [
     CommonModule,
     RouterModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
 
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
     MatCardModule,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
+    MatFormFieldModule
+    
     
   ],
   exports: [
     HeaderComponent,
     NavComponent,
     FooterComponent,
+    FormsModule,
+    ReactiveFormsModule,
 
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
     MatCardModule,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
+    MatFormFieldModule
   ]
 })
 export class SharedModule { }

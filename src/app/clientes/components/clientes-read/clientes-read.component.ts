@@ -8,7 +8,7 @@ import { Cliente } from '../../models/cliente.model';
   styleUrls: ['./clientes-read.component.scss']
 })
 export class ClientesReadComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'nome', 'email', 'dataNascimento'];
+  displayedColumns: string[] = ['id', 'nome', 'email', 'dataNascimento', 'acoes'];
   dataSource: Cliente[];
 
   constructor(private clienteService: ClientesService) {
@@ -24,5 +24,11 @@ export class ClientesReadComponent implements OnInit {
       (cliente) => this.dataSource = cliente,
       (erro) => console.log('O erro foi: ', erro),
     )
+  }
+
+  deletar(id: number) {
+    this.clienteService.deletar(id).subscribe(() => {
+      this.listarTodos();
+    })
   }
 }

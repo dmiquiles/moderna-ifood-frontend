@@ -16,7 +16,7 @@ export interface Contato {
 export interface Endereco {
     rua: string,
     numero: string,
-    CEP: string,
+    cep: string,
     bairro: string,
     cidade: string,
     uf: string
